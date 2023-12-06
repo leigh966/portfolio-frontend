@@ -1,0 +1,17 @@
+.project-tab{
+    width: 29%;
+    padding: 1%;
+    height: 10%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 1%;
+    align-items: center;
+}
+
+.project-tab-name{
+    width: 100%;
+    text-align: center;
+}
+
+.project-tab-description{
+}
