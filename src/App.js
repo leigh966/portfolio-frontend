@@ -5,7 +5,7 @@ async function getProjects(setProjects)
 {
     try
     {
-        const response = await fetch("http://127.0.0.1:3001/projects");
+        const response = await fetch("https://portfollio-backend-568be0e4fc29.herokuapp.com/projects");
         if(response.status==200)
         {
             const json = await response.json();
