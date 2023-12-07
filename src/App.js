@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Home from "./Home";
+import Projects from "./Projects";
 
 async function getProjects(setProjects)
 {
@@ -30,5 +30,5 @@ export default function App()
     const [projects, setProjects] = useState([]);
     useEffect(()=>getProjects(setProjects),[]);
     
-    return <Home projects={projects}/>
+    return <Projects projects={projects}/>
 }

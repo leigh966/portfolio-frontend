@@ -1,6 +1,6 @@
 import ProjectTab from "./ProjectTab";
-import "./Home.css"
-export default function Home({projects})
+import "./Projects.css"
+export default function Projects({projects})
 {
     let tabs = []
     projects.forEach(element => {
