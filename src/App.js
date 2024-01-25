@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Projects from "./Projects";
 import Banner from "./Banner";
+import About from "./About";
 
 async function getProjects(setProjects) {
   try {
@@ -28,6 +29,7 @@ export default function App() {
     <>
       <Banner setPage={setPage} />
       {page == "Projects" && <Projects projects={projects} />}
+      {page == "About" && <About />}
     </>
   );
 }
