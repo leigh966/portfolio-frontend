@@ -3,6 +3,7 @@ import Projects from "./Projects";
 import Banner from "./Banner";
 import About from "./About";
 import { BACKEND_URL } from "./WebConfig";
+import { ProjectPage } from "./ProjectPage";
 
 async function getProjects(setProjects) {
   try {
@@ -27,8 +28,11 @@ export default function App() {
   return (
     <>
       <Banner setPage={setPage} />
-      {page == "Projects" && <Projects projects={projects} />}
+      {page == "Projects" && <Projects projects={projects} setPage={setPage} />}
       {page == "About" && <About />}
+      {page.split(":")[0] == "project" && (
+        <ProjectPage project={projects[page.split(":")[1]]} />
+      )}
     </>
   );
 }

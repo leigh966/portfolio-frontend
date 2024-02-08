@@ -1,9 +1,9 @@
 import "./ProjectTab.css";
 import { BACKEND_URL } from "./WebConfig";
 
-export default function ProjectTab({ data }) {
+export default function ProjectTab({ data, onClick }) {
   return (
-    <div className="project-tab">
+    <div className="project-tab" onClick={onClick}>
       <img
         className="project-tab-img"
         src={BACKEND_URL + "image/" + data.image_filename}
