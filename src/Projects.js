@@ -7,5 +7,10 @@ export default function Projects({ projects, setPage }) {
       <ProjectTab data={element} onClick={() => setPage("project:" + index)} />
     );
   });
-  return <div className="project-tabs">{tabs}</div>;
+  return (
+    <>
+      <h1>Projects</h1>
+      <div className="project-tabs">{tabs}</div>
+    </>
+  );
 }
