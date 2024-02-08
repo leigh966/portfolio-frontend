@@ -20,7 +20,7 @@
   width: calc(var(--project-tab-default-width) + 4px);
   height: calc(var(--project-tab-default-height) + 4px);
   padding: calc(var(--project-tab-default-pad) + 4px);
-  margin-left: calc(var(--project-tab-default-margin)-1px);
+  margin-left: calc(var(--project-tab-default-margin)-2px);
   margin-top: var(--project-tab-default-margin);
   background-color: white;
   cursor: pointer;
