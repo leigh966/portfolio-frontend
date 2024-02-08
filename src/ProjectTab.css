@@ -1,12 +1,28 @@
+:root {
+  --project-tab-default-width: 29%;
+  --project-tab-default-height: 320px;
+  --project-tab-default-pad: 3px;
+  --project-tab-default-margin: 10px;
+}
+
 .project-tab {
-  width: 29%;
-  padding: 1%;
-  height: 10%;
+  width: var(--project-tab-default-width);
+  padding: var(--project-tab-default-pad);
+  height: var(--project-tab-default-height);
   border: 1px solid black;
   border-radius: 20px;
-  margin: 1%;
-  margin-bottom: 0;
+  margin: var(--project-tab-default-margin);
   align-items: center;
+  background-color: rgb(245, 245, 245);
+}
+
+.project-tab:hover {
+  width: calc(var(--project-tab-default-width) + 4px);
+  height: calc(var(--project-tab-default-height) + 4px);
+  padding: calc(var(--project-tab-default-pad) + 4px);
+  margin-left: calc(var(--project-tab-default-margin)-1px);
+  margin-top: var(--project-tab-default-margin);
+  background-color: white;
 }
 
 .project-tab-name {
