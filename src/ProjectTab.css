@@ -23,6 +23,7 @@
   margin-left: calc(var(--project-tab-default-margin)-1px);
   margin-top: var(--project-tab-default-margin);
   background-color: white;
+  cursor: pointer;
 }
 
 .project-tab-name {
