@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import Projects from "./Projects";
 import Banner from "./Banner";
 import About from "./About";
+import { BACKEND_URL } from "./WebConfig";
 
 async function getProjects(setProjects) {
   try {
-    const response = await fetch(
-      "https://portfollio-backend-568be0e4fc29.herokuapp.com/projects"
-    );
+    const response = await fetch(BACKEND_URL + "projects");
     if (response.status == 200) {
       const json = await response.json();
       setProjects(json);
