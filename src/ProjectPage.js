@@ -1,5 +1,4 @@
 import ProjectBannerImage from "./ProjectBannerImage";
-import { BACKEND_URL } from "./WebConfig";
 import "./ProjectPage.css";
 
 export function ProjectPage({ project }) {
