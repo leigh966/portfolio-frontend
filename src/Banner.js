@@ -15,10 +15,13 @@ function PageButton({ page, setPage }) {
 
 export default function Banner({ setPage }) {
   return (
-    <div id="banner">
-      <h1 id="name-header">Leigh Hurley</h1>
-      <PageButton page="Projects" setPage={setPage} />
-      <PageButton page="About" setPage={setPage} />
-    </div>
+    <>
+      <div id="banner">
+        <h1 id="name-header">Leigh Hurley</h1>
+        <PageButton page="Projects" setPage={setPage} />
+        <PageButton page="About" setPage={setPage} />
+      </div>
+      <hr />
+    </>
   );
 }
