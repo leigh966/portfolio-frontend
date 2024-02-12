@@ -4,12 +4,19 @@ export default class PortfollioClient {
     console.log("client created with url: " + URL);
   }
 
-  async getImageUrl(filename) {
-    console.log(filename);
-    const resp = await fetch(this.url + "signed_url/" + filename);
+  async get(endpoint) {
+    const resp = await fetch(this.url + endpoint);
     if (resp.status == 200) {
-      return await resp.text();
+      return resp;
     }
     throw Error("Failed to fetch: " + (await resp.text()));
+  }
+
+  async getImageUrl(filename) {
+    return await (await this.get("signed_url/" + filename)).text();
+  }
+
+  async getProjects() {
+    return await (await this.get("projects")).json();
   }
 }
