@@ -9,7 +9,6 @@ export default function Projects({ projects, setPage }) {
   });
   return (
     <>
-      <h1>Projects</h1>
       <div className="project-tabs">{tabs}</div>
     </>
   );
