@@ -5,6 +5,7 @@ import About from "./About";
 import { BACKEND_URL } from "./WebConfig";
 import { ProjectPage } from "./ProjectPage";
 import PortfollioClient from "./api/PortfollioConnection";
+import "./App.css";
 
 async function getProjects(setProjects) {
   const client = new PortfollioClient(BACKEND_URL);
@@ -17,7 +18,7 @@ export default function App() {
   useEffect(() => getProjects(setProjects), []);
   const client = new PortfollioClient(BACKEND_URL);
   return (
-    <>
+    <div id="full-body">
       <Banner setPage={setPage} currentPage={page} />
       {page == "Projects" && (
         <Projects projects={projects} setPage={setPage} client={client} />
@@ -26,6 +27,6 @@ export default function App() {
       {page.split(":")[0] == "project" && (
         <ProjectPage project={projects[page.split(":")[1]]} client={client} />
       )}
-    </>
+    </div>
   );
 }

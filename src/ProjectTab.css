@@ -14,9 +14,11 @@
   margin: var(--project-tab-default-margin);
   align-items: center;
   background-color: rgb(245, 245, 245);
+  box-shadow: -3px 3px rgb(136, 136, 136, 0.7);
 }
 
 .project-tab:hover {
+  box-shadow: 3px 5px rgb(136, 136, 136, 0.5);
   /* width: calc(var(--project-tab-default-width) + 4px);
   height: calc(var(--project-tab-default-height) + 4px); */
   padding: calc(var(--project-tab-default-pad) + 4px);
