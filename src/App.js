@@ -18,7 +18,7 @@ export default function App() {
   const client = new PortfollioClient(BACKEND_URL);
   return (
     <>
-      <Banner setPage={setPage} />
+      <Banner setPage={setPage} currentPage={page} />
       {page == "Projects" && (
         <Projects projects={projects} setPage={setPage} client={client} />
       )}
