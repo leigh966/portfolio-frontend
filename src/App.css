@@ -1,5 +1,5 @@
 #full-body {
-  width: 97.3%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -9,7 +9,7 @@ body {
 }
 
 #main-body {
-  width: 90%;
+  width: 100%;
 }
 
 #root {
