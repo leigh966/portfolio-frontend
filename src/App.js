@@ -20,13 +20,15 @@ export default function App() {
   return (
     <div id="full-body">
       <Banner setPage={setPage} currentPage={page} />
-      {page == "Projects" && (
-        <Projects projects={projects} setPage={setPage} client={client} />
-      )}
-      {page == "About" && <About />}
-      {page.split(":")[0] == "project" && (
-        <ProjectPage project={projects[page.split(":")[1]]} client={client} />
-      )}
+      <div id="main-body">
+        {page == "Projects" && (
+          <Projects projects={projects} setPage={setPage} client={client} />
+        )}
+        {page == "About" && <About />}
+        {page.split(":")[0] == "project" && (
+          <ProjectPage project={projects[page.split(":")[1]]} client={client} />
+        )}
+      </div>
     </div>
   );
 }

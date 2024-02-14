@@ -29,7 +29,6 @@ export default function Banner({ setPage, currentPage }) {
         />
         <PageButton page="About" setPage={setPage} currentPage={currentPage} />
       </div>
-      <hr style={{ width: "100%" }} />
     </>
   );
 }
