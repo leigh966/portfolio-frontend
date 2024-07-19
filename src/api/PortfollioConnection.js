@@ -13,7 +13,7 @@ export default class PortfollioClient {
   }
 
   async getImageUrl(filename) {
-    return await (await this.get("signed_url/" + filename)).text();
+    return await (await this.get("image_url/" + filename)).text();
   }
 
   async getProjects() {
