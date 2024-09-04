@@ -4,6 +4,7 @@
   background-color: white;
   margin: 0px;
   padding-left: 40px;
+  position: fixed;
 }
 #banner,
 #banner-buttons {
