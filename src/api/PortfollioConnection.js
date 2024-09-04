@@ -23,4 +23,8 @@ export default class PortfollioClient {
   async getEmployment() {
     return await (await this.get("employment")).json();
   }
+
+  async getEducation() {
+    return await (await this.get("education")).json();
+  }
 }

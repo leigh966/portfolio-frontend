@@ -2,48 +2,81 @@ import { useState, useEffect } from "react";
 import PortfollioClient from "./api/PortfollioConnection";
 import { BACKEND_URL } from "./WebConfig";
 import "./About.css";
+import AboutSegment from "./AboutSegment";
 
-async function getEmployment(setEmployment) {
-  let client = new PortfollioClient(BACKEND_URL);
-  setEmployment(await client.getEmployment());
+const client = new PortfollioClient(BACKEND_URL);
+
+async function fetchData(type, setData) {
+  try {
+    const data =
+      type === "employment"
+        ? await client.getEmployment()
+        : await client.getEducation();
+    setData(data);
+  } catch (error) {
+    console.error(`Failed to fetch ${type}`, error);
+  }
 }
 
-function EmploymentSegment({ title, employer, description, start, end }) {
+function EmploymentSegment(props) {
   return (
-    <div className="employ-seg">
-      <h2 className="employ-seg-title">{title}</h2>
-      <h3 className="employ-seg-employer">{employer}</h3>
-      <p className="employ-seg-desc">{description}</p>
-      <p className="employ-seg-range">
-        {start} - {end}
-      </p>
-    </div>
+    <AboutSegment
+      className="employ-seg"
+      title={props.job_title}
+      subtitle={props.employer}
+      description={props.description || ""}
+      start={props.start.split("T")[0]}
+      end={props.end.split("T")[0]}
+    />
+  );
+}
+
+function EducationSegment(props) {
+  return (
+    <AboutSegment
+      className="edu-seg"
+      title={props.course}
+      subtitle={props.school}
+      description={props.description || ""}
+      start={props.start.split("T")[0]}
+      end={props.end.split("T")[0]}
+    />
   );
 }
 
 export default function About() {
   const [employment, setEmployment] = useState([]);
-  useEffect(() => getEmployment(setEmployment), []);
-  console.log(employment);
-  let employmentOutput = [];
-  employment.forEach((elem) => {
-    employmentOutput.push(
-      <EmploymentSegment
-        title={elem.job_title}
-        employer={elem.employer}
-        description=""
-        start={elem.start_date.split("T")[0]}
-        end={elem.end_date.split("T")[0]}
-      />
-    );
-  });
+  const [education, setEducation] = useState([]);
+
+  useEffect(() => {
+    fetchData("employment", setEmployment);
+    fetchData("education", setEducation);
+  }, []);
+
   return (
     <>
       <h1>Employment</h1>
-      {employmentOutput}
+      {employment.map((elem, index) => (
+        <EmploymentSegment
+          key={`employment-${index}`} // Use index as a fallback key
+          title={elem.job_title}
+          employer={elem.employer}
+          description={elem.description || ""}
+          start={elem.start_date.split("T")[0]}
+          end={elem.end_date.split("T")[0]}
+        />
+      ))}
       <h2>Education</h2>
-      <h3>University Of Central Lancashire</h3>
-      <h3>Blackpool Sixth Form College</h3>
+      {education.map((elem, index) => (
+        <EducationSegment
+          key={`education-${index}`} // Use index as a fallback key
+          course={elem.course}
+          school={elem.school}
+          description={elem.description || ""}
+          start={elem.start_date.split("T")[0]}
+          end={elem.end_date.split("T")[0]}
+        />
+      ))}
     </>
   );
 }
