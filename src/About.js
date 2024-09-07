@@ -54,7 +54,7 @@ export default function About() {
   }, []);
 
   return (
-    <>
+    <div className="about tab">
       <h1>Employment</h1>
       {employment.map((elem, index) => (
         <EmploymentSegment
@@ -77,6 +77,6 @@ export default function About() {
           end={elem.end_date.split("T")[0]}
         />
       ))}
-    </>
+    </div>
   );
 }
