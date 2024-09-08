@@ -1,34 +1,36 @@
 import "./Banner.css";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
-function PageButton({ page, setPage, currentPage }) {
+function PageButton({ page, currentPage, label, setPage }) {
   let classname = "banner-button";
   if (page == currentPage) {
     classname += " active-banner-button";
   }
   return (
-    <p
-      className={classname}
-      onClick={() => {
-        setPage(page);
-      }}
-    >
-      {page}
-    </p>
+    <Link className={classname} to={page} onClick={() => setPage(page)}>
+      {label}
+    </Link>
   );
 }
 
-export default function Banner({ setPage, currentPage }) {
+export default function Banner() {
+  const [page, setPage] = useState(window.location.pathname);
   return (
-    <>
-      <div id="banner">
-        <h1 id="name-header">Leigh Hurley</h1>
-        <PageButton
-          page="Projects"
-          setPage={setPage}
-          currentPage={currentPage}
-        />
-        <PageButton page="About" setPage={setPage} currentPage={currentPage} />
-      </div>
-    </>
+    <div id="banner">
+      <h1 id="name-header">Leigh Hurley</h1>
+      <PageButton
+        page="/projects"
+        label="Projects"
+        currentPage={page}
+        setPage={setPage}
+      />
+      <PageButton
+        page="/about"
+        label="About"
+        currentPage={page}
+        setPage={setPage}
+      />
+    </div>
   );
 }

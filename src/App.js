@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import Projects from "./Projects/Projects";
-import Banner from "./Banner";
+import ProjectPage from "./Project/ProjectPage";
 import About from "./About/About";
 import { BACKEND_URL } from "./WebConfig";
-import { ProjectPage } from "./Project/ProjectPage";
 import PortfollioClient from "./api/PortfollioConnection";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
 
 async function getProjects(setProjects) {
   const client = new PortfollioClient(BACKEND_URL);
@@ -13,22 +14,24 @@ async function getProjects(setProjects) {
 }
 
 export default function App() {
-  const [page, setPage] = useState("Projects");
   const [projects, setProjects] = useState([]);
   useEffect(() => getProjects(setProjects), []);
   const client = new PortfollioClient(BACKEND_URL);
+
   return (
-    <div id="full-body">
-      <Banner setPage={setPage} currentPage={page} />
-      <div id="main-body">
-        {page == "Projects" && (
-          <Projects projects={projects} setPage={setPage} client={client} />
-        )}
-        {page == "About" && <About />}
-        {page.split(":")[0] == "project" && (
-          <ProjectPage project={projects[page.split(":")[1]]} client={client} />
-        )}
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="projects">
+            <Route
+              index
+              element={<Projects projects={projects} client={client} />}
+            />
+            <Route path=":id" element={<ProjectPage projects={projects} />} />
+          </Route>
+          <Route path="about" element={<About />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

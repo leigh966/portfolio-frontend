@@ -5,6 +5,7 @@
   margin: 0px;
   padding-left: 40px;
   position: fixed;
+  top: 0;
 }
 #banner,
 #banner-buttons {

@@ -1,7 +1,10 @@
 import ProjectBannerImage from "../ProjectBannerImage";
 import "./ProjectPage.css";
+import { useParams } from "react-router-dom";
 
-export function ProjectPage({ project }) {
+export default function ProjectPage({ projects }) {
+  const { id } = useParams();
+  const project = projects.find((proj) => proj.id === id);
   return (
     <>
       <ProjectBannerImage
