@@ -33,6 +33,7 @@
   font-size: larger;
   margin-left: 5%;
   margin-right: 5px;
+  text-decoration: none;
 }
 
 .banner-button:hover {
