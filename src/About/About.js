@@ -54,7 +54,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="about tab">
+    <div className="about">
       <h1>Employment</h1>
       {employment.map((elem, index) => (
         <EmploymentSegment

@@ -12,5 +12,5 @@ export default function Projects({ projects, setPage }) {
       />
     );
   });
-  return <div className="project-tabs tab">{tabs}</div>;
+  return <div className="project-tabs">{tabs}</div>;
 }

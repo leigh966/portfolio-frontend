@@ -5,7 +5,9 @@ export default function Layout() {
   return (
     <>
       <Banner />
-      <Outlet />
+      <div id="main-content">
+        <Outlet />
+      </div>
     </>
   );
 }
