@@ -1,4 +1,4 @@
-import ProjectBannerImage from "./ProjectBannerImage";
+import ProjectBannerImage from "../ProjectBannerImage";
 import "./ProjectPage.css";
 
 export function ProjectPage({ project }) {

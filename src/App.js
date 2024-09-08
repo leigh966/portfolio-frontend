@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Projects from "./Projects";
+import Projects from "./Projects/Projects";
 import Banner from "./Banner";
-import About from "./About";
+import About from "./About/About";
 import { BACKEND_URL } from "./WebConfig";
-import { ProjectPage } from "./ProjectPage";
+import { ProjectPage } from "./Project/ProjectPage";
 import PortfollioClient from "./api/PortfollioConnection";
 import "./App.css";
 

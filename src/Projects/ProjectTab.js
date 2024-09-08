@@ -1,6 +1,5 @@
-import ProjectBannerImage from "./ProjectBannerImage";
+import ProjectBannerImage from "../ProjectBannerImage";
 import "./ProjectTab.css";
-import { BACKEND_URL } from "./WebConfig";
 
 export default function ProjectTab({ data, onClick }) {
   return (
