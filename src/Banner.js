@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function PageButton({ page, currentPage, label, setPage }) {
   let classname = "banner-button";
-  if (page == currentPage) {
+  if (page === currentPage) {
     classname += " active-banner-button";
   }
   return (
