@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-import PortfollioClient from "../api/PortfollioConnection.js";
-import { BACKEND_URL } from "../WebConfig.js";
 import "./About.css";
 import AboutSegment from "./AboutSegment.js";
-
-const client = new PortfollioClient(BACKEND_URL);
+import { client } from "../client.js";
 
 async function fetchData(type, setData, setError) {
   try {
