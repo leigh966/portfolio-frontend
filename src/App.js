@@ -10,7 +10,13 @@ import { initClient } from "./client";
 
 export default function App() {
   const [projects, setProjects] = useState([]);
-  useEffect(() => initClient(), []);
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    initClient(setReady);
+  }, []);
+  if (!ready) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <BrowserRouter>
       <Routes>

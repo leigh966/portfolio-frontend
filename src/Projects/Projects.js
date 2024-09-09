@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import PortfollioErrorHandler from "../PortfollioErrorhandler";
 import { client } from "../client";
 
-async function getProjects(client, setProjects, setError) {
+async function getProjects(setProjects, setError) {
   try {
     setProjects(await client.getProjects());
   } catch (err) {
@@ -16,7 +16,7 @@ async function getProjects(client, setProjects, setError) {
 export default function Projects({ projects, setProjects }) {
   const [error, setError] = useState(null);
   useEffect(() => {
-    getProjects(client, setProjects, setError);
+    getProjects(setProjects, setError);
   }, []);
   let tabs = [];
   const navigate = useNavigate();
