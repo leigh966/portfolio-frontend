@@ -14,7 +14,9 @@ async function getProjects(client, setProjects, setError) {
 
 export default function Projects({ projects, setProjects, client }) {
   const [error, setError] = useState(null);
-  useEffect(() => getProjects(client, setProjects, setError), []);
+  useEffect(() => {
+    getProjects(client, setProjects, setError);
+  }, []);
   let tabs = [];
   const navigate = useNavigate();
   if (error) {
