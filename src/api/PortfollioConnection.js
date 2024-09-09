@@ -1,3 +1,4 @@
+import PortfollioConnectionError from "./PortfollioConnectionError";
 export default class PortfollioClient {
   constructor(URL) {
     this.url = URL;
@@ -9,7 +10,7 @@ export default class PortfollioClient {
     if (resp.status == 200) {
       return resp;
     }
-    throw Error("Failed to fetch: " + (await resp.text()));
+    throw new PortfollioConnectionError(resp);
   }
 
   async getImageUrl(filename) {

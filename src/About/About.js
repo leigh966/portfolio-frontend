@@ -6,7 +6,7 @@ import AboutSegment from "./AboutSegment.js";
 
 const client = new PortfollioClient(BACKEND_URL);
 
-async function fetchData(type, setData) {
+async function fetchData(type, setData, setError) {
   try {
     const data =
       type === "employment"
@@ -14,7 +14,7 @@ async function fetchData(type, setData) {
         : await client.getEducation();
     setData(data);
   } catch (error) {
-    console.error(`Failed to fetch ${type}`, error);
+    setError(error);
   }
 }
 
@@ -47,11 +47,17 @@ function EducationSegment(props) {
 export default function About() {
   const [employment, setEmployment] = useState([]);
   const [education, setEducation] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchData("employment", setEmployment);
-    fetchData("education", setEducation);
+    fetchData("employment", setEmployment, setError);
+    fetchData("education", setEducation, setError);
   }, []);
+
+  if (error) {
+    // In future add handling for specific objects so the page can render as much as possible if one thing can be fetched but another can't
+    return <div className="about">{error.message}</div>;
+  }
 
   return (
     <div className="about">

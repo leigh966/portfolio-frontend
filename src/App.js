@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Projects from "./Projects/Projects";
 import ProjectPage from "./Project/ProjectPage";
 import About from "./About/About";
@@ -8,14 +8,9 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 
-async function getProjects(setProjects) {
-  const client = new PortfollioClient(BACKEND_URL);
-  setProjects(await client.getProjects());
-}
-
 export default function App() {
   const [projects, setProjects] = useState([]);
-  useEffect(() => getProjects(setProjects), []);
+
   const client = new PortfollioClient(BACKEND_URL);
 
   return (
@@ -25,7 +20,13 @@ export default function App() {
           <Route path="projects">
             <Route
               index
-              element={<Projects projects={projects} client={client} />}
+              element={
+                <Projects
+                  projects={projects}
+                  client={client}
+                  setProjects={setProjects}
+                />
+              }
             />
             <Route path=":id" element={<ProjectPage projects={projects} />} />
           </Route>
