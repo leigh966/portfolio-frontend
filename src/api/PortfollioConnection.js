@@ -1,8 +1,15 @@
 import PortfollioConnectionError from "./PortfollioConnectionError";
+import Education from "./Education";
+import Employment from "./Employment";
+
 export default class PortfollioClient {
   constructor(URL) {
     this.url = URL;
     console.log("client created with url: " + URL);
+  }
+
+  jsonToObj(cls, json) {
+    return json.map((val) => new cls(val));
   }
 
   async get(endpoint) {
@@ -22,10 +29,16 @@ export default class PortfollioClient {
   }
 
   async getEmployment() {
-    return await (await this.get("employment")).json();
+    return this.jsonToObj(
+      Employment,
+      await (await this.get("employment")).json()
+    );
   }
 
   async getEducation() {
-    return await (await this.get("education")).json();
+    return this.jsonToObj(
+      Education,
+      await (await this.get("education")).json()
+    );
   }
 }
