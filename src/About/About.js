@@ -19,7 +19,7 @@ function EmploymentSegment(props) {
   return (
     <AboutSegment
       className="employ-seg"
-      title={props.job_title}
+      title={props.jobTitle}
       subtitle={props.employer}
       description={props.description || ""}
       start={props.start.split("T")[0]}
@@ -62,14 +62,14 @@ export default function About() {
       {employment.map((elem, index) => (
         <EmploymentSegment
           key={`employment-${index}`} // Use index as a fallback key
-          title={elem.job_title}
+          jobTitle={elem.job_title}
           employer={elem.employer}
           description={elem.description || ""}
           start={elem.start_date.split("T")[0]}
           end={elem.end_date.split("T")[0]}
         />
       ))}
-      <h2>Education</h2>
+      <h1>Education</h1>
       {education.map((elem, index) => (
         <EducationSegment
           key={`education-${index}`} // Use index as a fallback key
