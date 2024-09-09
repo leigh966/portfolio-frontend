@@ -17,10 +17,12 @@
   box-shadow: -3px 3px rgb(136, 136, 136, 0.5);
 }
 
+.project-tab * {
+  color: black;
+}
+
 .project-tab:hover {
   box-shadow: 3px 5px rgb(136, 136, 136, 0.3);
-  /* width: calc(var(--project-tab-default-width) + 4px);
-  height: calc(var(--project-tab-default-height) + 4px); */
   padding: calc(var(--project-tab-default-pad) + 4px);
   margin-left: calc(var(--project-tab-default-margin)+2px);
   margin-top: calc(var(--project-tab-default-margin)-1px);

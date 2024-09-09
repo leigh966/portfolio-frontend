@@ -19,18 +19,20 @@ export default function Banner() {
   return (
     <div id="banner">
       <h1 id="name-header">Leigh Hurley</h1>
-      <PageButton
-        page="/projects"
-        label="Projects"
-        currentPage={page}
-        setPage={setPage}
-      />
-      <PageButton
-        page="/about"
-        label="About"
-        currentPage={page}
-        setPage={setPage}
-      />
+      <div id="banner-buttons">
+        <PageButton
+          page="/projects"
+          label="Projects"
+          currentPage={page}
+          setPage={setPage}
+        />
+        <PageButton
+          page="/about"
+          label="About"
+          currentPage={page}
+          setPage={setPage}
+        />
+      </div>
     </div>
   );
 }
