@@ -11,6 +11,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   bottom: 0;
+  font-family: sans-serif;
 }
 
 #main-content {

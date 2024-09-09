@@ -3,7 +3,7 @@
   height: 100px;
   background-color: white;
   margin: 0px;
-  padding-left: 40px;
+  padding-left: 20px;
   position: fixed;
   top: 0;
   box-shadow: 1px 2px 5px grey;
@@ -19,20 +19,17 @@
   width: 80%;
   height: 100%;
 }
-#name-header {
-  width: 20%;
-}
+
 .banner-button {
   height: 20%;
   text-align: center;
   align-items: center;
-  padding: 1%;
   border: 1px dotted white;
-  width: 12.5%;
+  width: min(12.5%, 150px);
   border-radius: 30px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Times New Roman", Times, serif;
   font-size: larger;
-  margin-left: 5%;
+  margin-left: min(5%, 20px);
   margin-right: 5px;
   text-decoration: none;
 }
@@ -48,9 +45,11 @@
 
 .active-banner-button {
   color: blue;
+  text-decoration: bold;
 }
 
 #name-header {
-  font-size: 2.7dvw;
+  font-size: 30px;
   font-family: monospace;
+  margin-right: 60px;
 }
