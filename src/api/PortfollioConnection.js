@@ -1,6 +1,7 @@
 import PortfollioConnectionError from "./PortfollioConnectionError";
 import Education from "./Education";
 import Employment from "./Employment";
+import Project from "./Project";
 
 export default class PortfollioClient {
   constructor(URL) {
@@ -25,7 +26,7 @@ export default class PortfollioClient {
   }
 
   async getProjects() {
-    return await (await this.get("projects")).json();
+    return this.jsonToObj(Project, await (await this.get("projects")).json());
   }
 
   async getEmployment() {
