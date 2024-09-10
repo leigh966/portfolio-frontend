@@ -8,3 +8,12 @@ export async function getProjects(setProjects, setError) {
     setError(err);
   }
 }
+
+export async function fetchAsyncData(setData, setError, fetchingMethod) {
+  try {
+    const data = await fetchingMethod();
+    setData(data);
+  } catch (error) {
+    setError(error);
+  }
+}

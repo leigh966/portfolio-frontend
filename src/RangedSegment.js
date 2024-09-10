@@ -1,4 +1,4 @@
-export default function AboutSegment({
+export default function RangedSegment({
   title,
   subtitle,
   description,
@@ -7,7 +7,7 @@ export default function AboutSegment({
   className,
 }) {
   return (
-    <div className={className}>
+    <div className={className + " seg"}>
       <h2 className={`${className}-title`}>{title}</h2>
       <h3 className={`${className}-subtitle`}>{subtitle}</h3>
       <p className={`${className}-desc`}>{description}</p>

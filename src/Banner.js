@@ -36,8 +36,15 @@ export default function Banner() {
           cancelRefresh={() => clearInterval(refresh)}
         />
         <PageButton
-          page="/about"
-          label="About"
+          page="/employment"
+          label="Work History"
+          currentPage={page}
+          setPage={setPage}
+          cancelRefresh={() => clearInterval(refresh)}
+        />
+        <PageButton
+          page="/education"
+          label="Education"
           currentPage={page}
           setPage={setPage}
           cancelRefresh={() => clearInterval(refresh)}

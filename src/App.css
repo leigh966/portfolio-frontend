@@ -27,3 +27,31 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.employ-seg-range,
+.edu-seg-range {
+  padding: 0px;
+  margin: 0px;
+}
+
+.employ-seg-employer,
+.edu-seg-employer {
+  padding: 0px;
+  margin: 0px;
+}
+
+.employ-seg-title,
+.edu-seg-title {
+  padding: 0px;
+  margin: 0px;
+}
+
+.seg {
+  padding-top: 0px;
+  padding-left: 5%;
+  padding-bottom: 25px;
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+}
