@@ -17,14 +17,21 @@ export default function EducationPage() {
     <>
       <h1>Education</h1>
       {education.map((elem, index) => (
-        <RangedSegment
-          key={`education-${index}`} // Use index as a fallback key
-          title={elem.course}
-          subtitle={elem.school}
-          description={elem.description || ""}
-          start={elem.start_date.split("T")[0]}
-          end={elem.end_date.split("T")[0]}
-        />
+        <div className="edu-emp-wrapper">
+          <img
+            className="edu-emp-icon"
+            src="hat.svg"
+            alt="Graduation Cap SVG"
+          />
+          <RangedSegment
+            key={`education-${index}`} // Use index as a fallback key
+            title={elem.course}
+            subtitle={elem.school}
+            description={elem.description || ""}
+            start={elem.start_date.split("T")[0]}
+            end={elem.end_date.split("T")[0]}
+          />
+        </div>
       ))}
     </>
   );

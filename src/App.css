@@ -48,10 +48,23 @@ body {
 
 .seg {
   padding-top: 0px;
-  padding-left: 5%;
+  padding-left: max(5%, 20px);
   padding-bottom: 25px;
 }
 
 h1 {
   font-family: "Times New Roman", Times, serif;
+}
+
+.edu-emp-icon {
+  width: max(5%, 20px);
+  height: max(5%, 20px);
+  padding-top: 20px;
+}
+
+.edu-emp-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  padding-left: 5%;
 }
