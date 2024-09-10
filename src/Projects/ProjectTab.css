@@ -1,39 +1,45 @@
 :root {
-  --project-tab-default-width: 550px;
-  --project-tab-default-height: 309.375px;
-  --project-tab-default-pad: 10px;
+  --project-tab-goal-width: 550px;
+  --project-tab-goal-height: 309.375px;
   --project-tab-default-margin: 10px;
+  --project-tab-default-bottom-pad: 0px;
+  --project-tab-default-top-pad: 50px;
 }
 
 .project-tab {
-  width: var(--project-tab-default-width);
-  padding: var(--project-tab-default-pad);
-  height: var(--project-tab-default-height);
+  width: var(--project-tab-goal-width);
+  height: calc(
+    var(--project-tab-goal-height) - var(--project-tab-default-bottom-pad) -
+      var(--project-tab-default-top-pad)
+  );
   border: 1px solid black;
   border-radius: 20px;
   margin: var(--project-tab-default-margin);
   align-items: center;
   background-color: rgb(245, 245, 245);
   box-shadow: -3px 3px rgb(136, 136, 136, 0.5);
+  background-repeat: no-repeat;
+  background-size: var(--project-tab-goal-width) var(--project-tab-goal-height);
+  overflow: hidden;
+  padding-top: var(--project-tab-default-top-pad);
+  padding-bottom: var(--project-tab-default-bottom-pad);
+  transition: all 1s;
 }
 
 .project-tab * {
-  color: black;
+  color: white;
 }
 
 .project-tab:hover {
-  box-shadow: 3px 5px rgb(136, 136, 136, 0.3);
-  padding: calc(var(--project-tab-default-pad) + 4px);
-  margin-left: calc(var(--project-tab-default-margin)+2px);
-  margin-top: calc(var(--project-tab-default-margin)-1px);
-  margin-right: calc(var(--project-tab-default-margin)-4px);
-  background-color: white;
   cursor: pointer;
+  padding-bottom: var(--project-tab-default-top-pad);
+  padding-top: var(--project-tab-default-bottom-pad);
+  transition: all 1s;
 }
 
 .project-tab-name {
   width: 100%;
-
+  padding-top: 5px;
   text-align: center;
 }
 
@@ -44,14 +50,24 @@
 .project-tab-update {
   width: 100%;
   text-align: right;
-  color: dimgray;
+  color: lightgray;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 .project-tab-img {
   width: 100%;
-  height: 200px;
   overflow: hidden;
   object-fit: contain;
+  position: fixed;
+}
+
+.project-card-text-container {
+  background-color: rgba(100, 100, 100, 0.75);
+  margin-top: calc(var(--project-tab-goal-height) - 80px);
+  transition: all 1s;
+}
+
+.project-card-text-container:hover {
+  background-color: rgba(100, 100, 100, 0.9);
 }
