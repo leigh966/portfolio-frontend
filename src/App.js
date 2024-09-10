@@ -4,7 +4,7 @@ import ProjectPage from "./Project/ProjectPage";
 import About from "./About/About";
 
 import "./App.css";
-import { BrowserRouter, Routes, Route, redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import { initClient } from "./client";
 import Redirect from "./Redirect";
