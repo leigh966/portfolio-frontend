@@ -16,6 +16,9 @@ export default function ProjectPage({ projects, setProjects }) {
   }
   if (projects.length === 0) return "Fetching projects";
   const project = projects.find((proj) => proj.id === id);
+  if (project === undefined) {
+    return <h1>404: No such project</h1>;
+  }
   return (
     <>
       <ProjectBannerImage
