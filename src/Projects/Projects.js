@@ -3,15 +3,7 @@ import ProjectTab from "./ProjectTab";
 import "./Projects.css";
 import { useEffect, useState } from "react";
 import PortfollioErrorHandler from "../PortfollioErrorhandler";
-import { client } from "../client";
-
-async function getProjects(setProjects, setError) {
-  try {
-    setProjects(await client.getProjects());
-  } catch (err) {
-    setError(err);
-  }
-}
+import { getProjects } from "../apiFixings";
 
 export default function Projects({ projects, setProjects }) {
   const [error, setError] = useState(null);

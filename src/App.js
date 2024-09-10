@@ -30,7 +30,12 @@ export default function App() {
                 <Projects projects={projects} setProjects={setProjects} />
               }
             />
-            <Route path=":id" element={<ProjectPage projects={projects} />} />
+            <Route
+              path=":id"
+              element={
+                <ProjectPage projects={projects} setProjects={setProjects} />
+              }
+            />
           </Route>
           <Route path="about" element={<About />} />
           <Route path="*" element={<Redirect to="/" />} />
