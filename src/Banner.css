@@ -11,6 +11,7 @@
   position: fixed;
   top: 0;
   box-shadow: 2px 3px 5px rgba(75, 75, 75);
+  z-index: 5;
 }
 #banner,
 #banner-buttons {
@@ -59,7 +60,7 @@
 
 #name-header {
   font-size: 35px;
-  font-family: monospace;
+  font-family: "Times New Roman", Times, serif;
   margin-right: 60px;
   width: 40%;
   text-align: left;

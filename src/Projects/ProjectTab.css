@@ -35,24 +35,29 @@
   padding-bottom: var(--project-tab-default-top-pad);
   padding-top: var(--project-tab-default-bottom-pad);
   transition: all 1s;
+  transform: rotate(1deg);
 }
 
 .project-tab-name {
   width: 100%;
   padding-top: 5px;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .project-tab-description {
   width: 100%;
+  text-align: center;
+  margin: 7px;
+  margin-bottom: 10px;
 }
 
 .project-tab-update {
-  width: 100%;
+  width: 97%;
   text-align: right;
   color: lightgray;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .project-tab-img {
