@@ -4,9 +4,10 @@ import ProjectPage from "./Project/ProjectPage";
 import About from "./About/About";
 
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, redirect } from "react-router-dom";
 import Layout from "./Layout";
 import { initClient } from "./client";
+import Redirect from "./Redirect";
 
 export default function App() {
   const [projects, setProjects] = useState([]);
@@ -21,6 +22,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<Redirect to="/projects" />} />
           <Route path="projects">
             <Route
               index
@@ -31,6 +33,7 @@ export default function App() {
             <Route path=":id" element={<ProjectPage projects={projects} />} />
           </Route>
           <Route path="about" element={<About />} />
+          <Route path="*" element={<Redirect to="/" />} />
         </Route>
       </Routes>
     </BrowserRouter>
