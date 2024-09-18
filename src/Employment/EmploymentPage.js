@@ -16,10 +16,10 @@ export default function EmploymentPage() {
   return (
     <>
       <h1>Work History</h1>
-      <div className="edu-emp-wrapper">
-        <img className="edu-emp-icon" src="case.svg" alt="Breifcase SVG" />
 
-        {employment.map((elem, index) => (
+      {employment.map((elem, index) => (
+        <div className="edu-emp-wrapper">
+          <img className="edu-emp-icon" src="case.svg" alt="Breifcase SVG" />
           <RangedSegment
             key={`employment-${index}`} // Use index as a fallback key
             title={elem.job_title}
@@ -28,8 +28,8 @@ export default function EmploymentPage() {
             start={elem.start_date.split("T")[0]}
             end={elem.end_date.split("T")[0]}
           />
-        ))}
-      </div>
+        </div>
+      ))}
     </>
   );
 }
