@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getProjects } from "../apiFixings";
 import { useEffect, useState } from "react";
 import PortfollioErrorHandler from "../PortfollioErrorhandler";
+import ReactMarkdown from "react-markdown";
 
 export default function ProjectPage({ projects, setProjects }) {
   const { id } = useParams();
@@ -27,7 +28,7 @@ export default function ProjectPage({ projects, setProjects }) {
       />
       <h1>{project.name}</h1>
       <h3>{project.tagline}</h3>
-      <p>{project.description}</p>
+      <ReactMarkdown>{project.description}</ReactMarkdown>
     </>
   );
 }
