@@ -28,7 +28,9 @@ export default function ProjectPage({ projects, setProjects }) {
       />
       <h1>{project.name}</h1>
       <h3>{project.tagline}</h3>
-      <ReactMarkdown>{project.description}</ReactMarkdown>
+      <ReactMarkdown>
+        {project.description.replaceAll("<br/>", "\n")}
+      </ReactMarkdown>
     </>
   );
 }
