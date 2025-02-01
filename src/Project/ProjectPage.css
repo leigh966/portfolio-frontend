@@ -4,6 +4,7 @@
   object-fit: contain;
 }
 
-body {
-  width: 80%;
+.project-body {
+  width: 70%;
+  margin: auto;
 }

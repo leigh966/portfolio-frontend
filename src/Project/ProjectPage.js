@@ -26,11 +26,13 @@ export default function ProjectPage({ projects, setProjects }) {
         filename={project.image_filename}
         className={"project-page-banner-img"}
       />
-      <h1>{project.name}</h1>
-      <h3>{project.tagline}</h3>
-      <ReactMarkdown>
-        {project.description.replaceAll("<br/>", "\n")}
-      </ReactMarkdown>
+      <div className="project-body">
+        <h1>{project.name}</h1>
+        <h3>{project.tagline}</h3>
+        <ReactMarkdown>
+          {project.description.replaceAll("<br/>", "\n")}
+        </ReactMarkdown>
+      </div>
     </>
   );
 }
