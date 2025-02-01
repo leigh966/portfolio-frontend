@@ -3,3 +3,7 @@
   max-height: 400px;
   object-fit: contain;
 }
+
+body {
+  width: 80%;
+}
