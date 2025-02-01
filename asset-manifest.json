@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://leighhurley.uk/static/css/main.180fe24e.css",
-    "main.js": "https://leighhurley.uk/static/js/main.012f3f41.js",
+    "main.css": "https://leighhurley.uk/static/css/main.314ae759.css",
+    "main.js": "https://leighhurley.uk/static/js/main.06dd8e5f.js",
     "index.html": "https://leighhurley.uk/index.html",
-    "main.180fe24e.css.map": "https://leighhurley.uk/static/css/main.180fe24e.css.map",
-    "main.012f3f41.js.map": "https://leighhurley.uk/static/js/main.012f3f41.js.map"
+    "main.314ae759.css.map": "https://leighhurley.uk/static/css/main.314ae759.css.map",
+    "main.06dd8e5f.js.map": "https://leighhurley.uk/static/js/main.06dd8e5f.js.map"
   },
   "entrypoints": [
-    "static/css/main.180fe24e.css",
-    "static/js/main.012f3f41.js"
+    "static/css/main.314ae759.css",
+    "static/js/main.06dd8e5f.js"
   ]
 }
