@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Projects from "./Projects/Projects";
 import ProjectPage from "./Project/ProjectPage";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import { initClient } from "./client";
 import Redirect from "./Redirect";
@@ -19,7 +19,7 @@ export default function App() {
     return <h1>Loading...</h1>;
   }
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Redirect to="/projects" />} />
@@ -42,6 +42,6 @@ export default function App() {
           <Route path="*" element={<Redirect to="/" />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
